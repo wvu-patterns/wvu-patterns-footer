@@ -1,0 +1,21 @@
+{
+  "name": "wvu-patterns-footer",
+  "version": "0.0.1",
+  "authors": [
+    "Steven Spriggs <steven.spriggs@gmail.com>"
+  ],
+  "description": "WVU Pattern Library - Footer Module",
+  "main": "./bower.json",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "wvu-patterns-footer-credits": "0.0.1",
+    "wvu-patterns-footer-links": "0.0.1"
+  }
+}
