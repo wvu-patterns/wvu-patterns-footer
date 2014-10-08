@@ -1,6 +1,6 @@
 {
   "name": "wvu-patterns-footer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": [
     "Steven Spriggs <steven.spriggs@gmail.com>"
   ],
@@ -19,6 +19,6 @@
   ],
   "dependencies": {
     "wvu-patterns-footer-credits": "0.0.2",
-    "wvu-patterns-footer-links": "0.0.3"
+    "wvu-patterns-footer-links": "0.0.4"
   }
 }
