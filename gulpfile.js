@@ -5,15 +5,22 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     inject = require("gulp-inject"),
-    clean = require("gulp-clean");
+    runSequence = require('run-sequence');
 
-gulp.task('clean', function () {
-  return gulp.src('./build/*', { read: false })
-    .pipe(clean());
+// Replaced with node del 
+// gulp.task('clean', function () {
+//   return gulp.src('./build/*', { read: false })
+//     .pipe(clean());
+// });
+// https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md
+gulp.task('clean', function(cb){
+  del([
+    'build/**/*'
+  ], cb);
 });
 
 gulp.task('scss-lint', function() {
-  return gulp.src('./src/scss/*.scss')
+  return gulp.src('./bower_components/**/*.scss')
     .pipe(scsslint({
       'config': '.scss-lint.yml'
     }))
@@ -29,7 +36,7 @@ gulp.task('rename-scss-partial',function(){
     .pipe(gulp.dest('./build/scss/'));
 });
 
-gulp.task('compile-css', ['rename-scss-partial'], function(){
+gulp.task('compile-css', ['scss-lint','rename-scss-partial'], function(){
   return gulp.src('./build/scss/*.scss')
     .pipe(sass({
       includePaths: ['scss'],
@@ -39,12 +46,12 @@ gulp.task('compile-css', ['rename-scss-partial'], function(){
     .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('copy-test',function(){
+gulp.task('copy-test-html',function(){
   return gulp.src('./src/test/index.html')
     .pipe(gulp.dest('./build/'))
 })
 
-gulp.task('inject-css', ['copy-test','compile-css'], function () {
+gulp.task('inject-src', ['copy-test-html','compile-css'], function () {
   var target = gulp.src('./build/index.html');
   target.pipe(inject(gulp.src(['./build/css/*.css'], {read: false}), {relative: true}))
     .pipe(gulp.dest('./build/'));
@@ -68,8 +75,8 @@ gulp.task('inject-css', ['copy-test','compile-css'], function () {
   .pipe(gulp.dest('./build/'))
 });
 
-gulp.task('build',['clean','inject-css'],function(){
-  return
+gulp.task('build', function(){
+  runSequence('clean','inject-src');
 });
 
 gulp.task('test',['build']);
