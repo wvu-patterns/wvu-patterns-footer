@@ -64,7 +64,6 @@ gulp.task('inject-src', ['copy-test-html','compile-css'], function () {
       return file.contents.toString('utf8')
     }
   }))
-  .pipe(gulp.dest('./build/'))
   
   target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer-credits/src/html/*.html']), {
     starttag: '<!-- inject:wvu-footer__credits:{{ext}} -->',
