@@ -58,7 +58,7 @@ gulp.task('inject-src', ['copy-test-html','compile-css'], function () {
   }))
     
   target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer-links/src/html/*.html']), {
-    starttag: '<!-- inject:links:{{ext}} -->',
+    starttag: '<!-- inject:wvu-footer__links:{{ext}} -->',
     transform: function (filePath, file) {
       // return file contents as string
       return file.contents.toString('utf8')
@@ -67,7 +67,7 @@ gulp.task('inject-src', ['copy-test-html','compile-css'], function () {
   .pipe(gulp.dest('./build/'))
   
   target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer-credits/src/html/*.html']), {
-    starttag: '<!-- inject:credits:{{ext}} -->',
+    starttag: '<!-- inject:wvu-footer__credits:{{ext}} -->',
     transform: function (filePath, file) {
       // return file contents as string
       return file.contents.toString('utf8')
