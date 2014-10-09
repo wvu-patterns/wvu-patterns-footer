@@ -20,14 +20,6 @@ gulp.task('clean', function(cb){
   ], cb);
 });
 
-gulp.task('scss-lint', function() {
-  return gulp.src('./bower_components/**/*.scss')
-    .pipe(scsslint({
-      'config': '.scss-lint.yml'
-    }))
-    .pipe(scsslint.failReporter());
-});
-
 gulp.task('rename-scss-partial',function(){
   gulp.src('./bower_components/wvu-patterns-footer-links/src/scss/_wvu-footer__links.scss')
     .pipe(rename('wvu-footer__links.scss'))
@@ -37,7 +29,7 @@ gulp.task('rename-scss-partial',function(){
     .pipe(gulp.dest('./build/scss/'));
 });
 
-gulp.task('compile-css', ['scss-lint','rename-scss-partial'], function(){
+gulp.task('compile-css', ['rename-scss-partial'], function(){
   return gulp.src('./build/scss/*.scss')
     .pipe(sass({
       includePaths: ['scss'],
