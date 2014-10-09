@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     inject = require("gulp-inject"),
+    del = require('del'),
     runSequence = require('run-sequence');
 
 // Replaced with node del 
