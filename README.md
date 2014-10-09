@@ -24,7 +24,7 @@ Requires:
 
 ####Installation
 
-* `cd {install-dir}/wvu-patterns-footer-links`
+* `cd {install-dir}/wvu-patterns-footer`
 * `npm install`
 
 ####Pattern Testing
