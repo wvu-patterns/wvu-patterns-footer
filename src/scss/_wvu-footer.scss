@@ -1,0 +1,9 @@
+// WVU Footer
+//==================================================
+
+// Dependencies
+@import './bower_components/inuit-clearfix/_trumps.clearfix';
+
+.wvu-footer {
+  @extend %clearfix;
+}
