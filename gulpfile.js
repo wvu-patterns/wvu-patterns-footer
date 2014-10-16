@@ -21,6 +21,9 @@ gulp.task('clean', function(cb){
 });
 
 gulp.task('rename-scss-partial',function(){
+  gulp.src('./src/scss/_wvu-footer.scss')
+    .pipe(rename('wvu-footer.scss'))
+    .pipe(gulp.dest('./build/scss/'));
   gulp.src('./bower_components/wvu-patterns-footer-links/src/scss/_wvu-footer__links.scss')
     .pipe(rename('wvu-footer__links.scss'))
     .pipe(gulp.dest('./build/scss/'));
