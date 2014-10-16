@@ -25,6 +25,7 @@ $wvu-footer-container-fluid: false !default;
 
 .wvu-footer__container {
   @extend %clearfix;
+  margin: 0 auto;
   padding-left: 18px;
   padding-right: 18px;
   width: 100%;
