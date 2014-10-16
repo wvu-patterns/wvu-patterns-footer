@@ -1,9 +1,33 @@
 // WVU Footer
 //==================================================
+// Default Variables
+$wvu-footer-container-max-width: 1400px !default;
+$wvu-footer-container-fluid: false !default;
 
 // Dependencies
 @import './bower_components/inuit-clearfix/_trumps.clearfix';
 
-.wvu-masthead__container {
-  @extend %clearfix;
+// Mixins
+@mixin is-fluid() {
+  // Check the guaranteed-existing variable. If it didn't exist 
+  // before calling this mixin/function/whatever, this will 
+  // return false.
+  @if $wvu-footer-container-fluid {
+    max-width: 'auto';
+  } @else {
+    max-width: $wvu-footer-container-max-width;
+  }
 }
+
+.wvu-footer {
+  width: 100%;
+}
+
+.wvu-footer__container {
+  @extend %clearfix;
+  padding-left: 18px;
+  padding-right: 18px;
+  width: 100%;
+  @include is-fluid();
+}
+
