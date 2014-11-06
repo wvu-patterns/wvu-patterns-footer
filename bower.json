@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "inuit-clearfix": "0.2.1",
-    "wvu-patterns-footer-credits": "master",
-    "wvu-patterns-footer-links": "master"
+    "wvu-patterns-footer-credits": "lastest",
+    "wvu-patterns-footer-links": "latest"
   }
 }
