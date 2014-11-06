@@ -4,36 +4,35 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     prefix = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
-    inject = require("gulp-inject"),
-    del = require('del'),
-    runSequence = require('run-sequence');
+    del = require("del"),
+    runSequence = require('run-sequence'),
+    scsslint = require('gulp-scss-lint'),
+    handlebars = require('gulp-compile-handlebars'),
+    extend = require('gulp-extend');
 
-// Replaced with node del 
-// gulp.task('clean', function () {
-//   return gulp.src('./build/*', { read: false })
-//     .pipe(clean());
-// });
-// https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md
 gulp.task('clean', function(cb){
   del([
-    'build/**/*'
+    'build/**'
   ], cb);
 });
 
-gulp.task('rename-scss-partial',function(){
-  gulp.src('./src/scss/_wvu-footer.scss')
-    .pipe(rename('wvu-footer.scss'))
-    .pipe(gulp.dest('./build/scss/'));
-  gulp.src('./bower_components/wvu-patterns-footer-links/src/scss/_wvu-footer__links.scss')
-    .pipe(rename('wvu-footer__links.scss'))
-    .pipe(gulp.dest('./build/scss/'));
-  return gulp.src('./bower_components/wvu-patterns-footer-credits/src/scss/_wvu-footer__credits.scss')
-    .pipe(rename('wvu-footer__credits.scss'))
-    .pipe(gulp.dest('./build/scss/'));
+gulp.task('scss-lint', function() {
+  return gulp.src('./src/scss/*.scss')
+    .pipe(scsslint({
+      'config': '.scss-lint.yml'
+    }))
+    .pipe(scsslint.failReporter());
 });
 
-gulp.task('compile-css', ['rename-scss-partial'], function(){
-  return gulp.src('./build/scss/*.scss')
+gulp.task('compile-scss', function(){
+  return gulp.src([
+      './bower_components/wvu-patterns-footer-credits/src/scss/*.scss',
+      './bower_components/wvu-patterns-footer-links/src/scss/*.scss',
+      './src/scss/*.scss'
+    ])
+    .pipe(rename(function (path) {
+      path.basename = path.basename.substring(1)
+    }))
     .pipe(sass({
       includePaths: ['scss'],
       outputStyle: 'expanded'
@@ -42,45 +41,36 @@ gulp.task('compile-css', ['rename-scss-partial'], function(){
     .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('copy-test-html',function(){
-  return gulp.src('./src/test/index.html')
-    .pipe(gulp.dest('./build/'))
+gulp.task('build-json',function(){
+  return gulp.src([
+    './src/handlebars/data/*.json',
+    './bower_components/wvu-patterns-footer-credits/src/handlebars/data/*.json',
+    './bower_components/wvu-patterns-footer-links/src/handlebars/data/*.json'
+    ])
+  .pipe(extend('_wvu-footer.json',true,2))
+  .pipe(gulp.dest("./build/data"));
 })
 
-gulp.task('inject-src', ['copy-test-html','compile-css'], function () {
-  var target = gulp.src('./build/index.html');
-  target.pipe(inject(gulp.src(['./build/css/*.css'], {read: false}), {relative: true}))
-    .pipe(gulp.dest('./build/'));
-    
-  target.pipe(inject(gulp.src(['./src/html/*.html']), {
-    starttag: '<!-- inject:html -->',
-    transform: function (filePath, file) {
-      // return file contents as string
-      return file.contents.toString('utf8')
-    }
-  }))
-    
-  target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer-links/src/html/*.html']), {
-    starttag: '<!-- inject:wvu-footer__links:{{ext}} -->',
-    transform: function (filePath, file) {
-      // return file contents as string
-      return file.contents.toString('utf8')
-    }
-  }))
-  
-  target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer-credits/src/html/*.html']), {
-    starttag: '<!-- inject:wvu-footer__credits:{{ext}} -->',
-    transform: function (filePath, file) {
-      // return file contents as string
-      return file.contents.toString('utf8')
-    }
-  }))
-  .pipe(gulp.dest('./build/'))
+gulp.task('compile', ['build-json','scss-lint','compile-scss'], function () {
+
+  var templateData = require('./build/data/_wvu-footer.json');
+
+  var options = {
+    batch : [
+      './bower_components/wvu-patterns-footer-credits/src/handlebars',
+      './bower_components/wvu-patterns-footer-links/src/handlebars',
+      './src/handlebars'
+    ]
+  }
+  return gulp.src('./src/handlebars/test/index.hbs')
+        .pipe(handlebars(templateData, options))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./build'));
 });
 
-gulp.task('build', function(){
-  runSequence('clean','inject-src');
+gulp.task('build',function(){
+  runSequence('clean','compile');
 });
 
 gulp.task('test',['build']);
-gulp.task('ci',['build']);
+gulp.task('ci',['scss-lint']);

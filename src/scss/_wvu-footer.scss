@@ -9,8 +9,8 @@ $wvu-footer-container-fluid: false !default;
 
 // Mixins
 @mixin is-fluid() {
-  // Check the guaranteed-existing variable. If it didn't exist 
-  // before calling this mixin/function/whatever, this will 
+  // Check the guaranteed-existing variable. If it didn't exist
+  // before calling this mixin/function/whatever, this will
   // return false.
   @if $wvu-footer-container-fluid {
     max-width: 'auto';
@@ -26,8 +26,7 @@ $wvu-footer-container-fluid: false !default;
 .wvu-footer__container {
   @extend %clearfix;
   margin: 0 auto;
-  padding: 0px 18px 18px 18px;
+  padding: 0 18px 18px;
   width: 100%;
   @include is-fluid();
 }
-
