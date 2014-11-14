@@ -5,6 +5,8 @@ node_js:
   - "0.11"
   
 before_install:
+  - gem install bundler
+  - bundle install
   - npm install -g bower
   - npm install -g gulp
   - bower install
