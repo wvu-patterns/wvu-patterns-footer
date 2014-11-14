@@ -20,6 +20,7 @@ $wvu-footer-container-fluid: false !default;
 }
 
 .wvu-footer {
+  clear: both; // should always have a clear due to usage with layouts with floats
   width: 100%;
 }
 
