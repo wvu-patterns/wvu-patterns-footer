@@ -8,7 +8,19 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     scsslint = require('gulp-scss-lint'),
     handlebars = require('gulp-compile-handlebars'),
-    extend = require('gulp-extend');
+    extend = require('gulp-extend'),
+    browserSync = require('browser-sync');
+
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: "./build/",
+    },
+    open: false,
+    logConnections: true,
+    logSnippet: false
+  });
+});
 
 gulp.task('clean', function(cb){
   del([
@@ -44,8 +56,7 @@ gulp.task('compile-scss', function(){
 gulp.task('build-json',function(){
   return gulp.src([
     './src/handlebars/data/*.json',
-    './bower_components/wvu-patterns-footer-credits/src/handlebars/data/*.json',
-    './bower_components/wvu-patterns-footer-links/src/handlebars/data/*.json'
+    './bower_components/wvu-patterns-footer-**/src/handlebars/data/*.json'
     ])
   .pipe(extend('_wvu-footer.json',true,2))
   .pipe(gulp.dest("./build/data"));
@@ -57,9 +68,9 @@ gulp.task('compile', ['build-json','scss-lint','compile-scss'], function () {
 
   var options = {
     batch : [
-      './bower_components/wvu-patterns-footer-credits/src/handlebars',
-      './bower_components/wvu-patterns-footer-links/src/handlebars',
-      './src/handlebars'
+      './bower_components/wvu-patterns-footer-credits/src/handlebars/partials',
+      './bower_components/wvu-patterns-footer-links/src/handlebars/partials',
+      './src/handlebars/partials'
     ]
   }
   return gulp.src('./src/handlebars/test/index.hbs')
@@ -72,5 +83,5 @@ gulp.task('build',function(){
   runSequence('clean','compile');
 });
 
-gulp.task('test',['build']);
+gulp.task('test',['build','browser-sync']);
 gulp.task('ci',['scss-lint']);

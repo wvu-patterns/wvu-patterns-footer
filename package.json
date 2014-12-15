@@ -1,6 +1,6 @@
 {
   "name": "wvu-patterns-footer",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "WVU Pattern Library - Footer Module",
   "main": "gulpfile.js",
   "scripts": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/wvu-patterns/wvu-patterns-footer",
   "devDependencies": {
+    "browser-sync": "^1.7.3",
     "bower": "^1.3.12",
     "del": "^0.1.3",
     "gulp": "^3.8.8",
