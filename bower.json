@@ -2,20 +2,29 @@
   "name": "wvu-patterns-footer",
   "version": "0.1.0",
   "authors": [
-    "Steven Spriggs <steven.spriggs@gmail.com>"
+    "Steven Spriggs <steven.spriggs@mail.wvu.edu>",
+    "Dustin Mazon <dustin.mazon@mail.wvu.edu>"
+  ],
+  "keywords": [
+    "wvu",
+    "west virginia university",
+    "patterns"
   ],
   "description": "WVU Pattern Library - Footer Module",
-  "main": "./bower.json",
   "license": "MIT",
+  "main": [
+    "src/cleanslate/_wvu-footer.html",
+    "src/handlebars/data/_wvu-footer.json",
+    "src/handlebars/partials/_wvu-footer.hbs",
+    "src/scss/_wvu-footer.scss"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "build",
     "test",
     "tests"
-  ],
-  "main": [
-    "./bower.json"
   ],
   "dependencies": {
     "inuit-clearfix": "0.2.1",
