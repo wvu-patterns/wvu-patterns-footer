@@ -1,0 +1,257 @@
+{
+  "tests": [
+    {
+      "name": "wvu-footer",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": false,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": false,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": false
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-address",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": false,
+          "wvu_footer": {
+            "address": "P.O. Box 6009 | One Waterfront Place | Morgantown, WV 26506-6009 | 304-293-2121",
+            "admin_access": false,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": false
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-extra-links",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": false,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": false,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-admin-access",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": false,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": false
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-extra-links-admin-access",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": false,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-address-extra-links-admin-access",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": false,
+          "wvu_footer": {
+            "address": "P.O. Box 6009 | One Waterfront Place | Morgantown, WV 26506-6009 | 304-293-2121",
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-tech",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": true,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-tech-address",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": true,
+          "wvu_footer": {
+            "address": "405 Fayette Pike | Montgomery, West Virginia 25136 | 888.554.8324",
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-tech-extra-links",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": true,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": false,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-tech-admin-access",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": true,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": false
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-tech-extra-links-admin-access",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": true,
+          "wvu_footer": {
+            "address": false,
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    },{
+      "name": "wvu-footer-tech-address-extra-links-admin-access",
+      "settings": {
+        "wvu_config": {
+          "wvu_tech": true,
+          "wvu_footer": {
+            "address": "405 Fayette Pike | Montgomery, West Virginia 25136 | 888.554.8324",
+            "admin_access": true,
+            "admin_url": "http://admin.wvu.edu",
+            "extra_links": true
+          }
+        },
+        "date": {
+          "year": 2016
+        },
+        "updated_at": {
+          "month_long": "January",
+          "day_num": 14,
+          "year": 2016
+        }
+      }
+    }
+  ]
+}

@@ -27,8 +27,12 @@
     "tests"
   ],
   "dependencies": {
-    "inuit-clearfix": "0.2.1",
-    "wvu-patterns-footer-credits": "latest",
-    "wvu-patterns-footer-links": "latest"
+    "wvu-utilities-variables": "1.0.0",
+    "wvu-utilities-typography": "1.0.0",
+    "neat" : "1.7.2"
+  },
+  "devDependencies": {
+    "wvu-utilities-typography": "1.0.0",
+    "normalize.scss": "~4.0.3"
   }
 }

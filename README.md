@@ -1,4 +1,4 @@
-# WVU Pattern Library - Footer  Module
+# WVU Pattern Library -- Footer Module
 
 [![Build Status](https://travis-ci.org/wvu-patterns/wvu-patterns-footer.svg?branch=master)](https://travis-ci.org/wvu-patterns/wvu-patterns-footer)
 
@@ -10,35 +10,39 @@ $ bower install --save wvu-patterns-footer
 
 ## Dependencies
 
-[wvu-patterns-footer-credits](https://github.com/wvu-patterns/wvu-patterns-footer-credits)
-
-[wvu-patterns-footer-links](https://github.com/wvu-patterns/wvu-patterns-footer-links)
-
-### Overrideable defaults
-
-```scss
-$wvu-masthead-large-breakpoint: 'min-width: 87.5em' !default;
-$wvu-masthead-background-png-url: '//static.wvu.edu/global/images/backgrounds/wvu/masthead/wvu-pattern_900x54--1.0.0.png' !default;
-$wvu-masthead-background-svg-url: '//static.wvu.edu/global/images/backgrounds/wvu/masthead/wvu-pattern--1.0.0.svg' !default;
-$wvu-masthead-container-fluid: false !default;
-$wvu-masthead-container-max-width: 1400 !default;
+```
+"wvu-utilities-variables": "1.0.0",
+"neat" : "1.7.2"
 ```
 
-Setting `$wvu-masthead-container-fluid` to `true` will remove the value of `max-width` of the container to `auto`
+### SCSS Overridable defaults
 
-###Pattern Development
+```scss
+
+```
+
+## Pattern Development
 
 Requires:
 
-* NodeJS
-* Gulp
+* Ruby ~= 2.2.3
+* NodeJS >= 4.1.2
+* Gulp >= 3.8.11
 
-####Installation
+*RVM is Preferred* but not required
 
-* `cd {install-dir}/wvu-patterns-footer`
-* `npm install`
+#### Installation
 
-####Pattern Testing
+```bash
+$ git clone https://github.com/wvu-patterns/wvu-patterns-footer.git
+$ cd wvu-patterns-footer
+$ gem install bundler
+$ bundle install
+$ npm install
+$ bower install
+```
 
-* `gulp test` will create a build directory so you can view pattern
-* `gulp ci`
+#### Pattern Testing
+
+* `gulp` will create a build directory so you can view pattern at `localhost:3000`
+* `gulp ci` will run lint test to make sure the .scss files are parseable and valid

@@ -1,0 +1,22 @@
+<div class="wvu-credits" role="contentinfo">
+  <ul>
+    <r:if var1="$wvu_config_tech" var2="false" operator="=">
+      <li><a href ="http://about.wvu.edu/wvu-facts">Accreditations</a></li>
+      <li><a href="http://webstandards.wvu.edu">Web Standards</a></li>
+      <li><a href="mailto:web_services@mail.wvu.edu">Questions or Comments?</a></li>
+    </r:if>
+    <r:if var1="$wvu_config_tech" var2="true" operator="=">
+      <li><a href ="http://academics.wvutech.edu/accreditation">Accreditations</a></li>
+      <li><a href="mailto:techwebmaster@mail.wvu.edu">Questions or Comments?</a></li>
+    </r:if>
+  </ul>
+
+  <p><r:if var1="$wvu_footer_address" var2="true" operator="="><r:var name='wvu_footer_address' /><br /></r:if>
+    &copy; <r:date_format format="%Y" value="now" />
+    <r:if var1="$wvu_config_tech" var2="false" operator="=">West Virginia University. West Virginia University is an Equal Opportunity/Affirmative Action institution.</r:if>
+    <r:if var1="$wvu_config_tech" var2="true" operator="=">WVU Tech. WVU Tech is an Equal Opportunity/Affirmative Action institution and a tobacco-free environment.</r:if>
+    <r:if var1="$wvu_footer_admin_access" var2="true" operator="=">
+      <span class="wvu-credits__last-edited">Last updated on <a class="wvu-u-fake-link" href="<r:page:edit_url/>"><r:date_format format="%B %-d, %Y" value="{page:updated_at}" /></a>.</span>
+    </r:if>
+  </p>
+</div> <!-- /.wvu-credits -->

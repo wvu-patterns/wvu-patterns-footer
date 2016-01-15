@@ -1,0 +1,22 @@
+<div class="wvu-credits" role="contentinfo">
+  <ul>
+    {{^wvu_config.tech}}
+      <li><a href ="http://about.wvu.edu/wvu-facts">Accreditations</a></li>
+      <li><a href="http://webstandards.wvu.edu">Web Standards</a></li>
+      <li><a href="mailto:web_services@mail.wvu.edu">Questions or Comments?</a></li>
+    {{/wvu_config.tech}}
+    {{#wvu_config.tech}}
+      <li><a href ="http://academics.wvutech.edu/accreditation">Accreditations</a></li>
+      <li><a href="mailto:techwebmaster@mail.wvu.edu">Questions or Comments?</a></li>
+    {{/wvu_config.tech}}
+  </ul>
+
+  <p>{{#wvu_footer.address}}{{.}}<br />{{/wvu_footer.address}}
+    &copy; {{date.year}}
+    {{^wvu_config.tech}}West Virginia University. West Virginia University is an Equal Opportunity/Affirmative Action institution.{{/wvu_config.tech}}
+    {{#wvu_config.tech}}WVU Tech. WVU Tech is an Equal Opportunity/Affirmative Action institution and a tobacco-free environment.{{/wvu_config.tech}}
+    {{#wvu_footer.admin_access}}
+      <span class="wvu-credits__last-edited">Last updated on <a class="wvu-u-fake-link" href="{{wvu_footer.admin_url}}">{{updated_at.month_long}} {{updated_at.day_num}},{{updated_at.year}}</a>.</span>
+    {{/wvu_footer.admin_access}}
+  </p>
+</div> <!-- /.wvu-credits -->

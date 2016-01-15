@@ -1,33 +1,191 @@
-// WVU Footer
-//==================================================
-// Default Variables
-$wvu-footer-container-max-width: 1400px !default;
-$wvu-footer-container-fluid: false !default;
+// Footer styles
+.wvu-footer {
+  float: left;
+  font-size: 0.8em;
+}
 
-// Dependencies
-@import './bower_components/inuit-clearfix/_trumps.clearfix';
+.wvu-contact {
+  margin-bottom: 18px;
 
-// Mixins
-@mixin is-fluid() {
-  // Check the guaranteed-existing variable. If it didn't exist
-  // before calling this mixin/function/whatever, this will
-  // return false.
-  @if $wvu-footer-container-fluid {
-    max-width: 'auto';
-  } @else {
-    max-width: $wvu-footer-container-max-width;
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 
-.wvu-footer {
-  clear: both; // should always have a clear due to usage with layouts with floats
-  width: 100%;
+.wvu-credits {
+  clear: left;
+
+  ul,
+  p {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    list-style-type: none;
+  }
 }
 
-.wvu-footer__container {
-  @extend %clearfix;
-  margin: 0 auto;
-  padding: 0 18px 18px;
-  width: 100%;
-  @include is-fluid();
+.wvu-links li {
+  display: inline;
+  list-style-type: none;
+}
+
+.wvu-credits li:before,
+.wvu-links li:before {
+  content: '|';
+  padding-right: 3px;
+}
+
+.wvu-credits li:first-child:before,
+.wvu-links li:first-child:before {
+  content: '';
+  padding-right: 0;
+}
+
+
+.wvu-u-fake-link {
+  color: $wvu-black;
+  text-decoration: none;
+
+  &:hover,
+  &:visited {
+    color: $wvu-black;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.wvu-icons {
+  ul {
+    clear: both;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  li {
+    display: inline;
+    margin: 0;
+  }
+}
+
+
+.wvu-social {
+  float: left;
+  padding: 3px 0;
+
+  li {
+    float: left;
+  }
+
+  a {
+    float: left;
+    height: 24px;
+    margin: 0;
+    padding-left: 0;
+    padding-top: 5px;
+    width: 24px;
+  }
+
+  li:last-child a {
+    margin-right: 0;
+  }
+}
+
+.wvu-credits,
+.wvu-icons,
+.wvu-contact {
+  float: left;
+  padding-bottom: 13px;
+}
+
+@if $wvu-tech {
+  .wvu-tech-flickr {
+    background: url($wvu-tech-flickr-icon-base64) no-repeat center center;
+  }
+
+  .wvu-tech-instagram {
+    background: url($wvu-tech-instagram-icon-base64) no-repeat center center;
+  }
+}
+
+.wvu-facebook {
+  background: url($wvu-facebook-icon-base64) no-repeat center center;
+}
+
+.wvu-twitter {
+  background: url($wvu-twitter-icon-base64) no-repeat center center;
+}
+
+.wvu-youtube {
+  background: url($wvu-youtube-icon-base64) no-repeat center center;
+}
+
+// ~Tablet+
+@media (min-width: $wvu-bp-medium) {
+  .wvu-footer {
+    width: 100%;
+  }
+
+  .wvu-contact {
+    float: left;
+    width: 100%;
+  }
+
+  .wvu-credits,
+  .wvu-icons {
+    margin-left: 0;
+    margin-right: 0;
+    width: 50%;
+  }
+
+  .wvu-credits {
+    float: left;
+
+    ul,
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .wvu-icons {
+    float: right;
+
+    ul {
+      float: right;
+    }
+  }
+
+}
+
+// /(min-width: $grid-mq-tablet)
+// Media query for higher pixel density displays, eg iPhone 4, Android, etc
+@media print,
+(-o-min-device-pixel-ratio: 5 / 4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+
+  .wvu-social a {
+    background-size: contain;
+  }
+
+  .wvu-facebook {
+    background-image: url($wvu-facebook-icon-hires-base64);
+  }
+
+  .wvu-twitter {
+    background-image: url($wvu-twitter-icon-hires-base64);
+  }
+
+  .wvu-youtube {
+    background-image: url($wvu-youtube-icon-hires-base64);
+  }
 }

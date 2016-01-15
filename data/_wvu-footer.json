@@ -1,0 +1,18 @@
+{
+  "wvu_config": {
+    "wvu_tech": false
+  },
+  "wvu_footer": {
+    "admin_access": true,
+    "admin_url": "http://admin.wvu.edu",
+    "extra_links": true
+  },
+  "date": {
+    "year": 2016
+  },
+  "updated_at": {
+    "month_long": "January",
+    "day_num": 14,
+    "year": 2016
+  }
+}

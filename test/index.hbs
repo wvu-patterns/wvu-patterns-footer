@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WVU Pattern Library - Footer Module Test</title>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+
+    <script type="text/javascript">
+      function resizeIframe(obj){
+         obj.style.height = 0;
+         obj.style.height = obj.contentWindow.document.body.scrollHeight + 200 + 'px' ;
+      }
+    </script>
+
+    <link href="../css/styles.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    {{#tests}}
+      <h3>{{test-name}}</h3>
+      <iframe src="iframes/{{test-name}}.html" onload="javascript:resizeIframe(this);"></iframe>
+    {{/tests}}
+  </body>
+</html>
