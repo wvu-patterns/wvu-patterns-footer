@@ -45,7 +45,7 @@ gulp.task('todo', function(){
   .pipe(gulp.dest('./'));
 });
 
-gulp.task('compile-scss', function(){
+gulp.task('compile-scss', ['build-scss-templates'], function(){
   return gulp.src([
       './test/scss/styles.scss',
       './build/scss/**/*.scss'
@@ -81,10 +81,12 @@ gulp.task('build-scss-templates', ['build-json'], function (cb) {
       }))
       .pipe(gulp.dest('./build/scss'));
   });
-  return cb();
+  setTimeout(function () {
+    cb();
+  }, 1000);
 });
 
-gulp.task('build-iframe-templates', ['build-scss-templates'], function (cb) {
+gulp.task('build-iframe-templates', ['build-json'], function (cb) {
   var options = {
     batch : [
       './src/handlebars'
@@ -126,7 +128,7 @@ gulp.task('build-json', function () {
   return file('tests.json', JSON.stringify(test_object, null, 2), { src: true }).pipe(gulp.dest('./build/data'));
 });
 
-gulp.task('build',['todo','compile-scss','build-iframe-templates'], function () {
+gulp.task('build',['todo','build-iframe-templates','compile-scss'], function () {
 
   var options = {
     batch : [
