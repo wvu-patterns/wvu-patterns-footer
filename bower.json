@@ -13,10 +13,18 @@
   "description": "WVU Pattern Library - Footer Module",
   "license": "MIT",
   "main": [
-    "src/cleanslate/_wvu-footer.html",
-    "src/handlebars/data/_wvu-footer.json",
-    "src/handlebars/partials/_wvu-footer.hbs",
-    "src/scss/_wvu-footer.scss"
+    "data/_wvu-footer.json",
+    "src/cleanslate/_wvu-footer__contact.html",
+    "src/cleanslate/_wvu-footer__credits.html",
+    "src/cleanslate/_wvu-footer__icons.html",
+    "src/haml/_wvu-footer__contact.haml",
+    "src/haml/_wvu-footer__credits.haml",
+    "src/haml/_wvu-footer__icons.haml",
+    "src/handlebars/_wvu-footer__contact.hbs",
+    "src/handlebars/_wvu-footer__credits.hbs",
+    "src/handlebars/_wvu-footer__icons.hbs",
+    "src/scss/_wvu-footer.scss",
+    "src/scss/manifest.scss",
   ],
   "ignore": [
     "**/.*",
