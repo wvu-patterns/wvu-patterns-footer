@@ -1,0 +1,70 @@
+%div.wvu-icons
+  - if !App.wvu_config[:wvu_tech]
+    - if App.wvu_config[:wvu_footer][:extra_links]
+      %ul.wvu-links
+        %li.first
+          %a{href: "http://www.wvu.edu/SiteIndex/"} A-Z Site Index
+        %li
+          %a{href: "http://campusmap.wvu.edu"} Campus Map
+        %li
+          %a{href: "http://employmentservices.hr.wvu.edu/wvu_jobs"} Jobs
+        %li
+          %a{href: "http://directory.wvu.edu"} Directory
+
+    %ul.wvu-links
+      %li
+        %a{href: "http://www.wvuf.org"} Give
+      %li
+        %a{href: "https://myaccess.wvu.edu"} MyAccess
+      %li
+        %a{href: "http://careerservices.wvu.edu/students/mountaineertraklogins"} MountaineerTRAK
+      %li
+        %a{href: "http://emergency.wvu.edu/alert"} WVU Alert
+      %li
+        %a{href: "http://wvutoday.wvu.edu"} WVU Today
+      %li
+        %a{href: "https://portal.wvu.edu"} WVU Portal
+
+    %ul.wvu-social
+      %li
+        %a.wvu-facebook{href: "https://www.facebook.com/wvumountaineers"} WVU on Facebook
+      %li
+        %a.wvu-twitter{href: "https://twitter.com/WestVirginiaU"} WVU on Twitter
+      %li
+        %a.wvu-youtube{href: "http://videos.wvu.edu"} WVU on YouTube
+
+  - else
+    - if App.wvu_config[:wvu_footer][:extra_links]
+      %ul.wvu-links
+        %li
+          %a{href: "http://www.wvutech.edu/campus_map"} Campus Map
+        %li
+          %a{href: "http://www.wvutech.edu/directory"} Directory
+        %li
+          %a{href: "http://hr.wvutech.edu/employment_opportunities"} Jobs
+        %li.first
+          %a{href: "http://www.wvutech.edu/a_z_site_index"} Site Index
+
+    %ul.wvu-links
+      %li
+        %a{href: "https://www.mountaineerconnection.com/sslpage.aspx?pid=501&section=WVU%20Tech"} Give
+      %li
+        %a{href: "http://myaccess.wvu.edu/"} MyAccess
+      %li
+        %a{href: "http://cal.wvu.edu/default.aspx?type=&view=Grid&category=35-0%2c35-118%2c35-119%2c35-120%2c35-121%2c35-122%2c35-123%2c35-124%2c35-125&ihc=y"} Calendar
+      %li
+        %a{href: "http://emergency.wvu.edu/alert/tech/"} Tech Alert
+      %li
+        %a{href: "http://mix.wvu.edu/"} MIX
+
+    %ul.wvu-social
+      %li
+        %a.wvu-tech-instagram{href: "http://instagram.com/wvu_tech"} WVU Tech on Instagram
+      %li
+        %a.wvu-tech-flickr{href: "http://www.flickr.com/photos/tech-relations-communications/sets/"} WVU Tech on Flickr
+      %li
+        %a.wvu-facebook{href: "http://www.facebook.com/pages/Montgomery-WV/West-Virginia-University-Institute-of-Technology/147509211929495"} WVU Tech on Facebook
+      %li
+        %a.wvu-twitter{href: "http://twitter.com/WVU_Tech"} WVU Tech on Twitter
+      %li
+        %a.wvu-youtube{href: "http://www.youtube.com/WVUTech1895"} WVU Tech on YouTube

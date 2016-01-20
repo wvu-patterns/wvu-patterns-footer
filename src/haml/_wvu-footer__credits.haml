@@ -1,0 +1,29 @@
+%div.wvu-credits{role: "contentinfo"}
+  %ul
+    - if !App.wvu_config[:wvu_tech]
+      %li
+        %a{href: "http://about.wvu.edu/wvu-facts"} Accreditations
+      %li
+        %a{href: "http://webstandards.wvu.edu"} Web Standards
+      %li
+        %a{href: "mailto:web_services@mail.wvu.edu"} Questions or Comments?
+    - else
+      %li
+        %a{href: "http://academics.wvutech.edu/accreditation"} Accreditation
+      %li
+        %a{href: "mailto:techwebmaster@mail.wvu.edu"} Questions or Comments?
+  %p
+    - if App.wvu_config[:wvu_footer][:address]
+      = App.wvu_config[:wvu_footer][:address]
+      %br
+    &copy;
+    = Date.today.strftime("%Y")
+    - if !App.wvu_config[:wvu_tech]
+      West Virginia University. West Virginia University is an Equal Opportunity/Affirmative Action institution.
+    - else
+      WVU Tech. WVU Tech is an Equal Opportunity/Affirmative Action institution and a tobacco-free environment.
+    - if App.wvu_config[:wvu_footer][:admin_access]
+      %span.wvu-credits__last-edited
+        Last updated on
+          %a.wvu-u-fake-link{:href="#{App.wvu_config[:admin_url]}"}
+            = last_edited.strftime("%B %-d %Y")
