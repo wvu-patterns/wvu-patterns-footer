@@ -5,7 +5,8 @@
   "wvu_footer": {
     "admin_access": true,
     "admin_url": "http://admin.wvu.edu",
-    "extra_links": true
+    "extra_links": true,
+    "contact": "Contact Info"
   },
   "date": {
     "year": 2016

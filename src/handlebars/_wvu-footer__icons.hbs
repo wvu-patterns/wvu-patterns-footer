@@ -1,5 +1,5 @@
-{{^wvu_config.wvu_tech}}
-  <div class="wvu-icons">
+<div class="wvu-icons">
+  {{^wvu_config.wvu_tech}}
     {{#wvu_config.wvu_footer.extra_links}}
       <ul class="wvu-links">
         <li class="first"><a href="http://www.wvu.edu/SiteIndex/">A-Z Site Index</a></li>
@@ -23,10 +23,9 @@
       <li><a class="wvu-twitter" href="https://twitter.com/WestVirginiaU">WVU on Twitter</a></li>
       <li><a class="wvu-youtube" href="http://videos.wvu.edu">WVU on YouTube</a></li>
     </ul>
-  </div> <!-- /.wvu-icons -->
-{{/wvu_config.wvu_tech}}
-{{#wvu_config.wvu_tech}}
-  <div class="wvu-icons">
+  {{/wvu_config.wvu_tech}}
+  
+  {{#wvu_config.wvu_tech}}
     {{#wvu_config.wvu_footer.extra_links}}
       <ul class="wvu-links">
         <li><a href="http://www.wvutech.edu/campus_map">Campus Map</a></li>
@@ -51,5 +50,5 @@
       <li><a class="wvu-twitter" href="http://twitter.com/WVU_Tech">WVU Tech on Twitter</a></li>
       <li><a class="wvu-youtube" href="http://www.youtube.com/WVUTech1895">WVU Tech on YouTube</a></li>
     </ul>
-  </div> <!-- /.wvu-icons -->
-{{/wvu_config.wvu_tech}}
+  {{/wvu_config.wvu_tech}}
+</div> <!-- /.wvu-icons -->
