@@ -1,8 +1,10 @@
 {
   "name": "wvu-patterns-footer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "authors": [
     "Steven Spriggs <steven.spriggs@mail.wvu.edu>",
+    "Adam Glenn <adam.glenn@mail.wvu.edu>",
+    "Adam Johnson <adam.johnson@mail.wvu.edu>",
     "Dustin Mazon <dustin.mazon@mail.wvu.edu>"
   ],
   "keywords": [
@@ -14,17 +16,10 @@
   "license": "MIT",
   "main": [
     "data/_wvu-footer.json",
-    "src/cleanslate/_wvu-footer__contact.html",
-    "src/cleanslate/_wvu-footer__credits.html",
-    "src/cleanslate/_wvu-footer__icons.html",
-    "src/haml/_wvu-footer__contact.haml",
-    "src/haml/_wvu-footer__credits.haml",
-    "src/haml/_wvu-footer__icons.haml",
-    "src/handlebars/_wvu-footer__contact.hbs",
-    "src/handlebars/_wvu-footer__credits.hbs",
-    "src/handlebars/_wvu-footer__icons.hbs",
-    "src/scss/_wvu-footer.scss",
-    "src/scss/manifest.scss",
+    "src/cleanslate/_wvu-footer.html",
+    "src/haml/_wvu-footer.haml",
+    "src/handlebars/_wvu-footer.hbs",
+    "src/scss/manifest.scss"
   ],
   "ignore": [
     "**/.*",
@@ -36,7 +31,6 @@
   ],
   "dependencies": {
     "wvu-utilities-variables": "1.0.0",
-    "wvu-utilities-typography": "1.0.0",
     "neat" : "1.7.2"
   },
   "devDependencies": {
