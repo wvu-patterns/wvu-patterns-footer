@@ -1,7 +1,7 @@
 {
   "name": "wvu-patterns-footer",
   "homepage": "https://github.com/wvu-patterns/wvu-patterns-footer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/wvu-patterns/wvu-patterns-footer.git"
@@ -12,7 +12,6 @@
   "author": "Steven Spriggs <steven.spriggs@mail.wvu.edu>",
   "keywords": [
     "wvu",
-    "west virginia university",
     "patterns"
   ],
   "description": "WVU Pattern Library - Footer Module",
