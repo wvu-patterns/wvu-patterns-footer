@@ -129,7 +129,7 @@
 }
 
 // ~Tablet+
-@media (min-width: $wvu-bp-medium) {
+@include media($wvu-bp-medium) {
   .wvu-footer {
     width: 100%;
   }
